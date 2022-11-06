@@ -46,4 +46,4 @@ I would like to be able to see the details of the travel when I choose my depart
 
     Examples: 
       countryDepart | availableCountry  | travelModes | errorMessage
-      Greece        | Afghanistan       | airplane    | Unavailble payment method
+      Greece        | Afghanistan       | airplane    | Unavailble payment method 
