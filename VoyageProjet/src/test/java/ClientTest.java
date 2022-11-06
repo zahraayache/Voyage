@@ -26,7 +26,7 @@ public class ClientTest
 	
     @BeforeAll
     public static void setUp() {
-        client = new Client("Marina");
+        client = new Client("Marina","France");
     }
     
     @Test

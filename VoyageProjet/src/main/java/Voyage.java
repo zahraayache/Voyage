@@ -11,31 +11,45 @@ import java.util.List;
 
 public class Voyage 
 {
-    private static int id = 0;
-    private Country country;
+    private static int referenceNumber = 0;
+	private Country country;
+    private double price; 
 
-    /**
+	/**
      * Constructor for objects of class Travel
      */
+    
     public Voyage() {
-        this.id++; 
+        Voyage.referenceNumber++; 
     	this.country = new Country();
     }
 
     public Voyage(String country) {
-        this.id++;
+        Voyage.referenceNumber++;
         this.country = new Country();
         this.extracted().setCountryName(country);
     }
     
-    public int getId() {
-        return this.id;
+    public int getNumeroDeReference() {
+        return Voyage.referenceNumber;
     }
+    
+    public void setNumeroDeReference(int numeroDeReference) {
+		Voyage.referenceNumber = numeroDeReference;
+	}
     
     public Country getCountry() {
         return this.extracted();
     }
+    
+    public double getPrice() {
+		return price;
+	}
 
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	
     public void setTravelMode(String travelMode) {
        extracted().addTravelModes(travelMode);
     }
@@ -49,6 +63,6 @@ public class Voyage
     }
 
 	public String toString(){
-        return "Id: " + this.id + ", Country: " + this.extracted().getCountryName() + ", Travel Mode: " + this.extracted().travelModesToString();
+        return "Id: " + Voyage.referenceNumber + ", Country: " + this.extracted().getCountryName() + ", Travel Mode: " + this.extracted().travelModesToString();
     }
 }

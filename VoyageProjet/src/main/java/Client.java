@@ -16,15 +16,18 @@ public class Client
     private static int id;
     private String name;
     private List<Voyage> voyage;
+    private String countryInit;
+	private String countryDest;
 
     /**
      * Constructor for objects of class Client
      */
-    public Client(String name) {
+    public Client(String name, String countryInit) {
         // initialize instance variables
         this.id ++;
         this.name = name;
         this.voyage = new ArrayList<Voyage>();
+        this.countryInit=countryInit;
     }
     
     public List<Voyage> getTravel() {
@@ -43,11 +46,28 @@ public class Client
         return this.name;
     }
     
+    public String getCountryInit() {
+		return countryInit;
+	}
+
+	public void setCountryInit(String countryInit) {
+		this.countryInit = countryInit;
+	}
+
+	public String getCountryDest() {
+		return countryDest;
+	}
+
+	public void setCountryDest(String countryDest) {
+		this.countryDest = countryDest;
+	}
+    
     public Voyage createTravel(String travelMode, String country) {
     	if (travelMode == null | country == null) {
     		throw new NullPointerException();
     	}
-    	Voyage t = new Voyage(country);
+    	this.countryDest=country;
+    	Voyage t = new Voyage(this.countryDest);
         t.setTravelMode(travelMode);
         this.voyage.add(t);
         return t;

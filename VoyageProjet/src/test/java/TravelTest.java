@@ -33,7 +33,7 @@ public class TravelTest
     @Test
     public void testConstructor() {
     	assertEquals("France",t.getCountry().getCountryName());
-    	assertEquals(1,t.getId());
+    	assertEquals(1,t.getNumeroDeReference());
     }
 
     @Test

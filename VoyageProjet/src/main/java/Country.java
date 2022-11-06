@@ -12,7 +12,6 @@ import java.util.List;
 
 public class Country
 {
-    // instance variables - replace the example below with your own
 	private String countryName;
 	private List <String> travelModes;
 	
